@@ -1,3 +1,117 @@
 ---
 import '@/styles/globals.css';
 ---
+
+<header
+  class='relative mx-6 mt-10 flex items-center gap-16 md:ml-[2.44rem] md:mr-10 md:mt-10 md:gap-16 lg:mx-[10.31rem]'
+>
+  <div class='flex items-center justify-between gap-[10.25rem] md:gap-0'>
+    <img src='/images/shared/desktop/logo.svg' alt='logo' class='' />
+    <img
+      src='/images/shared/mobile/menu.svg'
+      alt='open menu'
+      class='md:hidden'
+      id='openMenu'
+    />
+  </div>
+  <!-- Mobile Menu -->
+  <nav
+    class='mobileMenu absolute right-0 top-0 z-50 hidden h-[41.6875rem] w-[18.75rem] bg-[#1B262F]'
+    id='mobileMenu'
+  >
+    <div
+      class='relative flex flex-col items-center justify-center pt-36 text-center before:absolute before:left-6 before:top-24 before:h-[0.0625rem] before:w-[15.5625rem] before:bg-[#FBFCFE]/15'
+    >
+      <img
+        src='/images/shared/mobile/close.svg'
+        alt='close menu'
+        class='absolute right-6 top-10'
+        id='closeMenu'
+      />
+      <ul class='flex flex-col items-center justify-center gap-8'>
+        <li>
+          <a
+            href='/src/pages/pricing'
+            class='cursor-pointer font-Public text-xl font-bold leading-normal text-[#FBFCFE]/70'
+            >Pricing</a
+          >
+        </li>
+        <li>
+          <a
+            href='/src/pages/about'
+            class='cursor-pointer font-Public text-xl font-bold leading-normal text-[#FBFCFE]/70'
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            href='/src/pages/contact'
+            class='cursor-pointer font-Public text-xl font-bold leading-normal text-[#FBFCFE]/70'
+            >Contact</a
+          >
+        </li>
+      </ul>
+      <button
+        type='button'
+        class='menuBtn mt-8 h-12 w-[15.75rem] rounded-3xl bg-[#BA4270] font-Public text-[0.9375rem] font-bold leading-normal tracking-[-0.00719rem] text-[#FBFCFE]'
+        >Schedule a Demo</button
+      >
+    </div>
+  </nav>
+  <!-- Desktop Menu -->
+  <nav
+    class='hidden md:flex md:items-center md:justify-between md:gap-[5.31rem] lg:gap-[30.36rem]'
+  >
+    <ul class='flex items-center gap-10'>
+      <li>
+        <a
+          href='/src/pages/pricing'
+          class='cursor-pointer font-Public text-[0.9375rem] font-bold leading-normal text-[#36536B]/70 transition-colors duration-300 ease-in hover:text-[#36536B]'
+          >Pricing</a
+        >
+      </li>
+      <li>
+        <a
+          href='/src/pages/about'
+          class='cursor-pointer font-Public text-[0.9375rem] font-bold leading-normal text-[#36536B]/70 transition-colors duration-300 ease-in hover:text-[#36536B]'
+          >About</a
+        >
+      </li>
+      <li>
+        <a
+          href='/src/pages/contact'
+          class='cursor-pointer font-Public text-[0.9375rem] font-bold leading-normal text-[#36536B]/70 transition-colors duration-300 ease-in hover:text-[#36536B]'
+          >Contact</a
+        >
+      </li>
+    </ul>
+    <button
+      type='button'
+      class='menuBtn cursor-pointer rounded-3xl bg-[#BA4270] font-Public text-[0.9375rem] font-bold leading-normal tracking-[-0.00719rem] text-white transition-colors duration-300 ease-in hover:bg-[#DA6D97] md:h-12 md:w-[10.8125rem]'
+    >
+      Schedule a Demo</button
+    >
+  </nav>
+</header>
+
+<style>
+  .menuBtn {
+    box-shadow: 10px 10px 25px -10px rgba(54, 83, 107, 0.25);
+  }
+  .mobileMenu {
+    box-shadow: 10px 10px 25px -10px rgba(54, 83, 107, 0.25);
+  }
+</style>
+
+<script>
+  const mobileMenu = document.getElementById('mobileMenu')!;
+  const openMenu = document.getElementById('openMenu')!;
+  const closeMenu = document.getElementById('closeMenu')!;
+
+  openMenu.addEventListener('click', () => {
+    mobileMenu.classList.remove('hidden');
+  });
+  closeMenu.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+  });
+</script>
